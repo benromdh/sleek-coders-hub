@@ -2,62 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Modern dark portfolio design system - All colors MUST be HSL */
+/* Professional academic portfolio design system - All colors MUST be HSL */
 
 @layer base {
   :root {
-    /* Dark theme base colors */
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
+    /* Light theme base colors */
+    --background: 0 0% 100%;
+    --foreground: 222 84% 4.9%;
 
     /* Card and surface colors */
-    --card: 222 47% 8%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 84% 4.9%;
 
     /* Interactive surfaces */
-    --popover: 222 47% 8%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 4.9%;
 
-    /* Primary brand colors with gradient support */
-    --primary: 271 81% 56%;
-    --primary-foreground: 210 40% 98%;
-    --primary-glow: 271 91% 65%;
+    /* Primary brand colors (EPFL Red) */
+    --primary: 348 83% 47%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 348 83% 57%;
 
     /* Secondary colors */
-    --secondary: 222 47% 12%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 84% 4.9%;
 
     /* Muted colors for subtle elements */
-    --muted: 222 47% 10%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
     /* Accent colors for highlights */
-    --accent: 193 76% 48%;
-    --accent-foreground: 222 47% 6%;
-    --accent-glow: 193 100% 55%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 84% 4.9%;
+    --accent-glow: 348 83% 57%;
 
     /* Status colors */
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
     /* Border and input colors */
-    --border: 222 47% 12%;
-    --input: 222 47% 12%;
-    --ring: 271 81% 56%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 348 83% 47%;
 
     /* Design tokens */
     --radius: 0.75rem;
 
     /* Custom gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(222 47% 9%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(210 40% 98%) 100%);
 
     /* Shadows with theme colors */
-    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
-    --shadow-accent: 0 0 30px hsl(var(--accent) / 0.2);
-    --shadow-card: 0 10px 30px -5px hsl(222 47% 3% / 0.3);
+    --shadow-glow: 0 4px 6px -1px hsl(var(--primary) / 0.1), 0 2px 4px -1px hsl(var(--primary) / 0.06);
+    --shadow-accent: 0 4px 6px -1px hsl(var(--primary) / 0.1);
+    --shadow-card: 0 1px 3px 0 hsl(0 0% 0% / 0.1), 0 1px 2px 0 hsl(0 0% 0% / 0.06);
 
     /* Animation variables */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -80,27 +80,27 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  /* Light mode (for future use) */
-  .light {
-    --background: 0 0% 100%;
-    --foreground: 222 47% 6%;
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 6%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 6%;
-    --primary: 271 81% 56%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 6%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 193 76% 48%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84% 60%;
+  /* Dark mode override (keeping light as default) */
+  .dark {
+    --background: 222 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 348 83% 47%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 271 81% 56%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 348 83% 47%;
   }
 }
 

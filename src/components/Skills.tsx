@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { 
   Code2, 
   Database, 
@@ -12,99 +13,29 @@ import {
 } from 'lucide-react';
 
 const Skills = () => {
-  const skillCategories = [
-    {
-      title: 'Frontend',
-      icon: Globe,
-      skills: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Vue.js', 'Angular'],
-      color: 'text-blue-400'
-    },
-    {
-      title: 'Backend',
-      icon: Server,
-      skills: ['Node.js', 'Python', 'Express', 'Django', 'FastAPI', 'PostgreSQL'],
-      color: 'text-green-400'
-    },
-    {
-      title: 'Mobile',
-      icon: Smartphone,
-      skills: ['React Native', 'Flutter', 'Swift', 'Kotlin', 'Expo', 'Ionic'],
-      color: 'text-purple-400'
-    },
-    {
-      title: 'Database',
-      icon: Database,
-      skills: ['PostgreSQL', 'MongoDB', 'Redis', 'Supabase', 'Firebase', 'MySQL'],
-      color: 'text-orange-400'
-    },
-    {
-      title: 'DevOps',
-      icon: Cloud,
-      skills: ['Docker', 'AWS', 'Kubernetes', 'CI/CD', 'Nginx', 'Linux'],
-      color: 'text-cyan-400'
-    },
-    {
-      title: 'Tools',
-      icon: GitBranch,
-      skills: ['Git', 'VS Code', 'Figma', 'Postman', 'Jest', 'Cypress'],
-      color: 'text-pink-400'
-    },
-    {
-      title: 'Languages',
-      icon: Code2,
-      skills: ['JavaScript', 'TypeScript', 'Python', 'Go', 'Rust', 'Java'],
-      color: 'text-yellow-400'
-    },
-    {
-      title: 'Design',
-      icon: Palette,
-      skills: ['UI/UX', 'Figma', 'Adobe XD', 'Photoshop', 'Wireframing', 'Prototyping'],
-      color: 'text-red-400'
-    }
-  ];
-
   return (
-    <section id="skills" className="py-20 bg-muted/20">
+    <section id="skills" className="py-12 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gradient mb-4">
-            Skills & Technologies
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive toolkit for building modern web applications
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {skillCategories.map((category, index) => (
-            <Card
-              key={index}
-              className="bg-gradient-card border-border shadow-card hover:shadow-glow transition-smooth group"
-            >
-              <CardHeader className="text-center pb-4">
-                <div className="flex justify-center mb-3">
-                  <div className="p-3 bg-secondary rounded-lg group-hover:bg-primary/20 transition-smooth">
-                    <category.icon className={`h-8 w-8 ${category.color}`} />
-                  </div>
-                </div>
-                <CardTitle className="text-xl">{category.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill, skillIndex) => (
-                    <Badge
-                      key={skillIndex}
-                      variant="secondary"
-                      className="text-xs bg-secondary/50 hover:bg-accent hover:text-accent-foreground transition-smooth cursor-default"
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <Card className="bg-card border-border shadow-card">
+          <CardContent className="p-6">
+            <h2 className="text-2xl font-bold mb-6 text-foreground">Skills</h2>
+            
+            <div className="flex flex-col items-center justify-center py-12 space-y-4">
+              <div className="w-24 h-24 bg-muted rounded-lg flex items-center justify-center">
+                <Code2 className="h-12 w-12 text-muted-foreground" />
+              </div>
+              
+              <div className="text-center space-y-2">
+                <p className="text-muted-foreground">This section looks empty...</p>
+                <p className="text-sm text-muted-foreground">Why not boost your visibility?</p>
+              </div>
+              
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                Add a skill
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );

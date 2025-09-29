@@ -1,86 +1,69 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 
 const About = () => {
-  const highlights = [
-    '5+ years of experience',
-    '50+ projects completed',
-    'Full-stack expertise',
-    'Open source contributor'
-  ];
-
   return (
-    <section id="about" className="py-20 bg-background">
+    <section id="presentation" className="py-12 bg-muted/30">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gradient mb-4">
-            About Me
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Passionate about creating innovative solutions and bringing ideas to life through code
-          </p>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div className="space-y-6">
-            <div className="space-y-4">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm a passionate full-stack developer with over 5 years of experience building 
-                web applications that solve real-world problems. I love working with modern 
-                technologies and am always eager to learn and adapt to new tools and frameworks.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                When I'm not coding, you can find me contributing to open source projects, 
-                writing technical blog posts, or exploring the latest developments in AI and 
-                machine learning. I believe in writing clean, maintainable code and creating 
-                exceptional user experiences.
-              </p>
-            </div>
-
-            {/* Highlights */}
-            <div className="grid grid-cols-2 gap-4">
-              {highlights.map((highlight, index) => (
-                <Badge
-                  key={index}
-                  variant="secondary"
-                  className="justify-center py-2 bg-gradient-card border border-border"
-                >
-                  {highlight}
-                </Badge>
-              ))}
-            </div>
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Presentation */}
+          <div className="lg:col-span-2 space-y-6">
+            <Card className="bg-card border-border shadow-card">
+              <CardContent className="p-6">
+                <h2 className="text-2xl font-bold mb-4 text-foreground">Presentation</h2>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  I am a dedicated PhD researcher at RWTH Aachen University, specializing in the intersection 
+                  of life sciences and engineering. My academic journey began at EPFL, where I completed both 
+                  my Bachelor's and Master's degrees in Life Sciences Engineering.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Currently, I focus on advanced research in academic settings, contributing to innovative 
+                  solutions in biotechnology and life sciences. My work spans across multiple disciplines, 
+                  combining theoretical knowledge with practical applications to address complex challenges 
+                  in the field.
+                </p>
+              </CardContent>
+            </Card>
           </div>
 
-          {/* Profile Card */}
-          <div className="flex justify-center">
-            <Card className="bg-gradient-card border-border shadow-card max-w-md w-full">
-              <CardContent className="p-8 text-center space-y-6">
-                {/* Avatar placeholder */}
-                <div className="w-32 h-32 mx-auto bg-gradient-primary rounded-full flex items-center justify-center text-4xl font-bold text-primary-foreground">
-                  AJ
+          {/* Professional Situation & Information */}
+          <div className="space-y-6">
+            <Card className="bg-card border-border shadow-card">
+              <CardContent className="p-6">
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-lg font-semibold text-foreground">Professional situation</h3>
+                  <Button variant="link" className="text-primary p-0 h-auto text-sm">
+                    Change
+                  </Button>
                 </div>
-                
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold">Alex Johnson</h3>
-                  <p className="text-accent">Full-Stack Developer</p>
-                  <p className="text-sm text-muted-foreground">
-                    San Francisco, CA
-                  </p>
-                </div>
+                {/* Content would be editable form fields in real implementation */}
+              </CardContent>
+            </Card>
 
-                <div className="space-y-2">
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Experience</span>
-                    <span className="font-semibold">5+ Years</span>
+            <Card className="bg-card border-border shadow-card">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-semibold text-foreground mb-4">Information</h3>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-muted-foreground">Name</span>
+                    <span className="text-sm text-foreground">ahmed.benromdhane</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Projects</span>
-                    <span className="font-semibold">50+</span>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-muted-foreground">Honorary title and distinctions</span>
+                    <span className="text-sm text-muted-foreground">Not specified</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Clients</span>
-                    <span className="font-semibold">25+</span>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-muted-foreground">Nationality(ies)</span>
+                    <span className="text-sm text-foreground">Tunisia</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-muted-foreground">Laboratory</span>
+                    <span className="text-sm text-muted-foreground">Not specified</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-muted-foreground">Association</span>
+                    <span className="text-sm text-muted-foreground">Not specified</span>
                   </div>
                 </div>
               </CardContent>
