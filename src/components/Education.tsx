@@ -73,7 +73,7 @@ const Education = () => {
                   <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
                     Bachelor's Degree
                   </h3>
-                  <p className="text-lg font-semibold text-primary mb-2">Persian Gulf University</p>
+                  <p className="text-lg font-semibold text-primary mb-2">EPFL</p>
                   <p className="text-muted-foreground">2015 - 2019</p>
                 </div>
               </div>
