@@ -1,83 +1,76 @@
 import { Button } from '@/components/ui/button';
-import { MapPin, University, Calendar, Github, Linkedin, Mail } from 'lucide-react';
-import campusHeader from '@/assets/campus-header.jpg';
+import { MapPin, Mail, Linkedin, Github } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative">
-      {/* Header Image */}
-      <div className="relative h-96 overflow-hidden">
-        <img 
-          src={campusHeader} 
-          alt="University Campus" 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/20" />
-      </div>
+    <section id="home" className="min-h-screen flex items-center justify-center pt-20 pb-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto text-center space-y-8">
+        {/* Profile Image Placeholder */}
+        <div className="mx-auto w-32 h-32 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
+          <span className="text-4xl font-bold text-white">AB</span>
+        </div>
 
-      {/* Profile Section */}
-      <div className="relative -mt-20 z-10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-card rounded-lg shadow-card p-8">
-            <div className="flex flex-col md:flex-row items-start gap-8">
-              {/* Profile Photo */}
-              <div className="flex-shrink-0">
-                <div className="w-32 h-32 bg-gradient-primary rounded-full flex items-center justify-center text-4xl font-bold text-primary-foreground shadow-lg">
-                  AB
-                </div>
-              </div>
+        {/* Name and Title */}
+        <div className="space-y-4">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            Ahmed Ben Romdhane
+          </h1>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-foreground">
+            PhD Researcher in AI-Driven Biosensing & Diagnostics
+          </h2>
+          <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto">
+            Building intelligent diagnostic platforms at the intersection of AI, bioinformatics, and biosensor technology
+          </p>
+        </div>
 
-              {/* Profile Info */}
-              <div className="flex-1">
-                <div className="flex flex-col md:flex-row justify-between items-start">
-                  <div className="space-y-4">
-                    <h1 className="text-4xl font-bold text-foreground">
-                      Ahmed Ben Romdhane
-                    </h1>
-                    
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2 text-primary">
-                        <University className="h-5 w-5" />
-                        <span className="font-semibold">PhD researcher</span>
-                      </div>
-                      
-                      <div className="flex items-center gap-2 text-muted-foreground">
-                        <span className="text-sm">RWTH AACHEN UNIVERSITY - Academic Research</span>
-                      </div>
-                      
-                      <div className="flex items-center gap-2 text-muted-foreground">
-                        <MapPin className="h-4 w-4" />
-                        <span className="text-sm">AACHEN, Germany</span>
-                      </div>
-                    </div>
+        {/* Institutions */}
+        <div className="flex flex-wrap justify-center gap-4 text-sm sm:text-base text-muted-foreground">
+          <span className="flex items-center gap-2">
+            <MapPin className="h-4 w-4 text-primary" />
+            Aachen, Germany
+          </span>
+          <span>|</span>
+          <span>RWTH Aachen University</span>
+          <span>|</span>
+          <span>EPFL</span>
+          <span>|</span>
+          <span>Harvard School of Engineering</span>
+        </div>
 
-                    <div className="flex gap-4 pt-4">
-                      <Button size="sm" className="bg-primary hover:bg-primary/90">
-                        <Github className="mr-2 h-4 w-4" />
-                        GitHub
-                      </Button>
-                      <Button variant="outline" size="sm">
-                        <Linkedin className="mr-2 h-4 w-4" />
-                        LinkedIn  
-                      </Button>
-                      <Button variant="outline" size="sm">
-                        <Mail className="mr-2 h-4 w-4" />
-                        Contact
-                      </Button>
-                    </div>
-                  </div>
+        {/* Brief Bio */}
+        <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+          I'm a doctoral researcher developing next-generation diagnostic technologies by combining artificial intelligence, 
+          bioinformatics, and cleanroom-based biosensor fabrication. My work spans the complete innovation pipeline—from 
+          discovering disease biomarkers using machine learning on multi-omics data, to designing novel detection assays, 
+          to building intelligent image processing systems that transform lab prototypes into clinical-grade devices.
+        </p>
 
-                  <div className="text-right mt-4 md:mt-0">
-                    <div className="text-sm text-muted-foreground">Alumni</div>
-                    <div className="text-lg font-semibold text-foreground">2022</div>
-                    <Button variant="link" className="text-primary p-0 h-auto">
-                      Edit my CV
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* CTA Buttons */}
+        <div className="flex flex-wrap justify-center gap-4 pt-4">
+          <Button 
+            size="lg"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground"
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            <Mail className="mr-2 h-5 w-5" />
+            Get In Touch
+          </Button>
+          <Button 
+            variant="outline" 
+            size="lg"
+            onClick={() => window.open('https://linkedin.com/in/ahmed-ben-romdhane-b70590185', '_blank')}
+          >
+            <Linkedin className="mr-2 h-5 w-5" />
+            LinkedIn
+          </Button>
+          <Button 
+            variant="outline" 
+            size="lg"
+            onClick={() => window.open('https://github.com/ahmed-ben-romdhane', '_blank')}
+          >
+            <Github className="mr-2 h-5 w-5" />
+            GitHub
+          </Button>
         </div>
       </div>
     </section>

@@ -1,200 +1,104 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github } from "lucide-react";
+import { Cpu, FlaskConical, LineChart, Globe } from "lucide-react";
 
 const Projects = () => {
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A modern e-commerce platform built with React, Node.js, and Stripe integration. Features include real-time inventory, user authentication, and admin dashboard.',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop&crop=center',
-      tags: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'Redis'],
-      github: 'https://github.com',
-      demo: 'https://demo.com',
-      featured: true
+      title: 'AI-Powered Multiplexed Biosensor Platform',
+      description: 'Integrated platform combining biomarker discovery, cleanroom fabrication, and intelligent detection. Achieving 10+ target multiplexed detection with real-time AI-powered analysis.',
+      icon: Cpu,
+      tags: ['Python', 'PyTorch', 'SAM2', 'Single-cell RNA-seq', 'Microfluidics', 'SPR Imaging'],
+      status: 'Ongoing PhD Research',
+      color: 'from-blue-500 to-cyan-500'
     },
     {
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop&crop=center',
-      tags: ['React', 'TypeScript', 'Socket.io', 'MongoDB'],
-      github: 'https://github.com',
-      demo: 'https://demo.com'
+      title: 'Cardiac Reprogramming Multi-Omics Analysis',
+      description: 'Machine learning pipeline for identifying regulatory factors in cell fate conversion. Analyzed 400+ genes/proteins to identify 15 key regulatory factors.',
+      icon: FlaskConical,
+      tags: ['R', 'Python', 'RNA-seq', 'Proteomics', 'Statistical Modeling'],
+      status: 'Published Research',
+      color: 'from-green-500 to-emerald-500'
     },
     {
-      title: 'Weather Dashboard',
-      description: 'A beautiful weather dashboard with location-based forecasts, interactive maps, and detailed weather analytics.',
-      image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop&crop=center',
-      tags: ['Vue.js', 'Express', 'Weather API', 'Charts.js'],
-      github: 'https://github.com',
-      demo: 'https://demo.com'
+      title: 'Electrochemical Biosensor Simulation Framework',
+      description: 'Finite element modeling for rapid virtual prototyping of point-of-care devices. Reduced physical prototyping iterations by 60%.',
+      icon: LineChart,
+      tags: ['Python', 'MATLAB', 'COMSOL', 'Electrochemistry'],
+      status: 'Gold Medal at SensUs',
+      color: 'from-orange-500 to-red-500'
     },
     {
-      title: 'Social Media Analytics',
-      description: 'An analytics platform for social media managers to track engagement, growth, and performance across multiple platforms.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=center',
-      tags: ['Next.js', 'Python', 'FastAPI', 'Chart.js'],
-      github: 'https://github.com',
-      demo: 'https://demo.com'
-    },
-    {
-      title: 'Real Estate Portal',
-      description: 'A comprehensive real estate platform with property listings, virtual tours, mortgage calculator, and agent management.',
-      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop&crop=center',
-      tags: ['React', 'Django', 'PostgreSQL', 'Maps API'],
-      github: 'https://github.com',
-      demo: 'https://demo.com'
-    },
-    {
-      title: 'Learning Management System',
-      description: 'An educational platform with course creation, video streaming, progress tracking, and interactive quizzes.',
-      image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&h=400&fit=crop&crop=center',
-      tags: ['Angular', 'Node.js', 'MongoDB', 'Video.js'],
-      github: 'https://github.com',
-      demo: 'https://demo.com'
+      title: 'CNN for Geospatial Road Segmentation',
+      description: 'Deep learning model for automated infrastructure mapping from satellite imagery. Achieved 94% F1-score, ranking top 3 among 80+ teams.',
+      icon: Globe,
+      tags: ['PyTorch', 'Computer Vision', 'CNNs', 'Semantic Segmentation'],
+      status: 'Competition Award',
+      color: 'from-purple-500 to-pink-500'
     }
   ];
 
   return (
     <section id="projects" className="py-20 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gradient mb-4">
-            Featured Projects
+        <div className="text-center mb-12">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            Key Projects
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills and experience
+            Innovative research projects bridging AI, biosensing, and computational biology
           </p>
         </div>
 
-        <div className="grid gap-8">
-          {/* Featured Project */}
-          {projects
-            .filter(project => project.featured)
-            .map((project, index) => (
-              <Card
-                key={index}
-                className="bg-gradient-card border-border shadow-card hover:shadow-glow transition-smooth overflow-hidden"
-              >
-                <div className="grid lg:grid-cols-2">
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-64 lg:h-full object-cover transition-smooth hover:scale-105"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <Badge className="bg-primary text-primary-foreground">
-                        Featured
-                      </Badge>
-                    </div>
+        <div className="grid md:grid-cols-2 gap-6">
+          {projects.map((project, index) => (
+            <Card
+              key={index}
+              className="bg-card border-border shadow-lg hover:shadow-xl transition-all duration-300 group"
+            >
+              <CardContent className="p-6 space-y-4">
+                <div className="flex items-start gap-4">
+                  <div className={`flex-shrink-0 p-3 rounded-lg bg-gradient-to-br ${project.color}`}>
+                    <project.icon className="h-6 w-6 text-white" />
                   </div>
-                  <div className="p-8 flex flex-col justify-between">
-                    <div className="space-y-4">
-                      <CardTitle className="text-2xl">{project.title}</CardTitle>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {project.description}
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {project.tags.map((tag, tagIndex) => (
-                          <Badge
-                            key={tagIndex}
-                            variant="secondary"
-                            className="bg-secondary/50"
-                          >
-                            {tag}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="flex gap-4 mt-6">
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="flex items-center gap-2"
-                        onClick={() => window.open(project.github, '_blank')}
-                      >
-                        <Github className="h-4 w-4" />
-                        Code
-                      </Button>
-                      <Button
-                        size="sm"
-                        className="flex items-center gap-2 bg-gradient-primary"
-                        onClick={() => window.open(project.demo, '_blank')}
-                      >
-                        <ExternalLink className="h-4 w-4" />
-                        Live Demo
-                      </Button>
-                    </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+                    <Badge variant="secondary" className="mb-3 bg-secondary/50">
+                      {project.status}
+                    </Badge>
                   </div>
                 </div>
-              </Card>
-            ))}
 
-          {/* Other Projects */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            {projects
-              .filter(project => !project.featured)
-              .map((project, index) => (
-                <Card
-                  key={index}
-                  className="bg-gradient-card border-border shadow-card hover:shadow-glow transition-smooth overflow-hidden group"
-                >
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-48 object-cover transition-smooth group-hover:scale-105"
-                    />
-                  </div>
-                  <CardHeader>
-                    <CardTitle className="text-xl">{project.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <p className="text-sm text-muted-foreground">
-                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.slice(0, 3).map((tag, tagIndex) => (
-                        <Badge
-                          key={tagIndex}
-                          variant="secondary"
-                          className="text-xs bg-secondary/50"
-                        >
-                          {tag}
-                        </Badge>
-                      ))}
-                      {project.tags.length > 3 && (
-                        <Badge
-                          variant="secondary"
-                          className="text-xs bg-secondary/50"
-                        >
-                          +{project.tags.length - 3}
-                        </Badge>
-                      )}
-                    </div>
-                    <div className="flex gap-2">
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="flex-1"
-                        onClick={() => window.open(project.github, '_blank')}
-                      >
-                        <Github className="h-4 w-4" />
-                      </Button>
-                      <Button
-                        size="sm"
-                        className="flex-1 bg-gradient-primary"
-                        onClick={() => window.open(project.demo, '_blank')}
-                      >
-                        <ExternalLink className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-          </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {project.tags.map((tag, tagIndex) => (
+                    <Badge
+                      key={tagIndex}
+                      variant="outline"
+                      className="border-border text-foreground"
+                    >
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <div className="mt-8 text-center">
+          <Card className="bg-card border-border shadow-lg">
+            <CardContent className="p-6">
+              <p className="text-lg text-muted-foreground">
+                <span className="font-semibold text-foreground">Publications:</span> Multiple research publications in preparation
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

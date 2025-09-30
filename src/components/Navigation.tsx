@@ -1,74 +1,101 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 
 const Navigation = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const navItems = [
-    { name: 'My account', href: '#' },
-    { name: 'Portfolio 0', href: '#' },
-    { name: 'Contact 0', href: '#' },
-    { name: 'Group 1', href: '#' },
-    { name: 'Badge 0', href: '#' }
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMobileMenuOpen(false);
+    }
+  };
+
+  const navLinks = [
+    { name: 'Home', id: 'home' },
+    { name: 'About', id: 'about' },
+    { name: 'Skills', id: 'skills' },
+    { name: 'Experience', id: 'experience' },
+    { name: 'Achievements', id: 'achievements' },
+    { name: 'Projects', id: 'projects' },
+    { name: 'Education', id: 'education' },
+    { name: 'Contact', id: 'contact' }
   ];
 
   return (
-    <nav className="bg-card border-b border-border sticky top-0 z-50 shadow-sm">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-card/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center">
-            <span className="text-2xl font-bold text-primary">EPFL</span>
-            <span className="text-xl font-medium text-foreground ml-1">Alumni</span>
-          </div>
+          <button
+            onClick={() => scrollToSection('home')}
+            className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+          >
+            AB
+          </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
+          <div className="hidden lg:flex space-x-1">
+            {navLinks.map((link) => (
               <Button
-                key={item.name}
+                key={link.id}
                 variant="ghost"
-                className="text-muted-foreground hover:text-foreground"
+                onClick={() => scrollToSection(link.id)}
+                className="text-muted-foreground hover:text-primary transition-colors"
               >
-                {item.name}
+                {link.name}
               </Button>
             ))}
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </Button>
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="lg:hidden"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </Button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden bg-card border-t border-border">
+          <div className="px-4 py-4 space-y-2">
+            {navLinks.map((link) => (
+              <Button
+                key={link.id}
+                variant="ghost"
+                onClick={() => scrollToSection(link.id)}
+                className="w-full justify-start text-muted-foreground hover:text-primary transition-colors"
+              >
+                {link.name}
+              </Button>
+            ))}
           </div>
         </div>
-
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
-            <div className="space-y-2">
-              {navItems.map((item) => (
-                <Button
-                  key={item.name}
-                  variant="ghost"
-                  className="w-full justify-start text-muted-foreground hover:text-foreground"
-                >
-                  {item.name}
-                </Button>
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
+      )}
     </nav>
   );
 };

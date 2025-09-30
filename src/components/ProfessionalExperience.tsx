@@ -1,63 +1,114 @@
 import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Building2, Calendar, MapPin, Edit } from 'lucide-react';
+import { Building2, Calendar, MapPin } from 'lucide-react';
 
 const ProfessionalExperience = () => {
-  return (
-    <section id="professional-experiences" className="py-12 bg-background">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Card className="bg-card border-border shadow-card">
-          <CardContent className="p-6">
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold text-foreground">Professional experiences</h2>
-              <Button variant="link" className="text-primary p-0 h-auto">
-                + Add an experience
-              </Button>
-            </div>
+  const experiences = [
+    {
+      title: 'Doctoral Researcher - AI & Biosensing',
+      organization: 'RWTH Aachen University',
+      location: 'Aachen, Germany',
+      period: 'Aug 2023 - Present',
+      achievements: [
+        'Engineering end-to-end AI biosensing platform with cleanroom-fabricated micro/nanostructured sensor arrays',
+        'Developing machine learning pipelines for miRNA biomarker identification from single-cell RNA sequencing data',
+        'Implementing foundation models (SAM2) for automated real-time biosensor image analysis',
+        'Impact: Achieving 10+ target multiplexed detection (vs 1-3 conventional), reducing analysis time from hours to seconds'
+      ],
+      isPrimary: true
+    },
+    {
+      title: 'Computational Biology Researcher',
+      organization: 'Harvard School of Engineering',
+      location: 'Boston, MA',
+      period: 'Nov 2021 - May 2022',
+      achievements: [
+        'Investigated cardiac cell reprogramming mechanisms using animal models',
+        'Analyzed 400+ differentially expressed genes/proteins from integrated transcriptomic and proteomic datasets',
+        'Identified 15 key regulatory factors and validated through in vitro and in vivo experiments',
+        'Skills demonstrated: Multi-omics analysis, machine learning, wet-lab validation, animal models'
+      ],
+      isPrimary: false
+    },
+    {
+      title: 'Biosensor Development Researcher',
+      organization: 'EPFL, Integrated Systems Laboratory',
+      location: 'Lausanne, Switzerland',
+      period: 'Dec 2019 - Aug 2020',
+      achievements: [
+        'Built numerical simulation framework for point-of-care electrochemical biosensor design',
+        'Developed predictive models optimizing sensor sensitivity and detection speed',
+        'Impact: Reduced physical prototyping iterations by 60%, predicted 5x faster detection times'
+      ],
+      isPrimary: false
+    },
+    {
+      title: 'R&D Scientist',
+      organization: 'Nestlé Research',
+      location: 'Lausanne, Switzerland',
+      period: 'Mar 2021 - Aug 2021',
+      achievements: [
+        'Developed optimized LC-MS/MS methods for infant formula quality control',
+        'Impact: 30% faster analysis time, 2x improved detection limits, informed strategy for $500M+ product line'
+      ],
+      isPrimary: false
+    }
+  ];
 
-            <div className="space-y-6">
-              {/* Primary Activity */}
-              <div className="border-b border-border pb-6">
+  return (
+    <section id="experience" className="py-20 bg-muted/20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            Research Experience
+          </h2>
+        </div>
+
+        <div className="space-y-8">
+          {experiences.map((exp, index) => (
+            <Card key={index} className="bg-card border-border shadow-lg">
+              <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0">
-                    <Building2 className="h-12 w-12 text-muted-foreground bg-muted p-2 rounded-lg" />
+                  <div className="flex-shrink-0 pt-1">
+                    <div className={`p-3 rounded-lg ${exp.isPrimary ? 'bg-gradient-to-br from-primary to-accent' : 'bg-muted'}`}>
+                      <Building2 className={`h-6 w-6 ${exp.isPrimary ? 'text-white' : 'text-muted-foreground'}`} />
+                    </div>
                   </div>
                   
-                  <div className="flex-1">
-                    <div className="flex justify-between items-start mb-2">
-                      <div>
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded">
-                            Primary activity
-                          </span>
+                  <div className="flex-1 space-y-3">
+                    <div>
+                      <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-1">
+                        {exp.title}
+                      </h3>
+                      <p className="text-lg font-semibold text-primary mb-2">
+                        {exp.organization}
+                      </p>
+                      
+                      <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+                        <div className="flex items-center gap-1">
+                          <Calendar className="h-4 w-4" />
+                          <span>{exp.period}</span>
                         </div>
-                        <h3 className="text-xl font-semibold text-foreground mb-1">
-                          PhD researcher 
-                          <Button variant="link" className="text-primary p-0 h-auto ml-2">
-                            <Edit className="h-4 w-4" />
-                            Edit
-                          </Button>
-                        </h3>
-                        <p className="text-primary font-medium mb-2">RWTH AACHEN UNIVERSITY</p>
-                        
-                        <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                          <div className="flex items-center gap-1">
-                            <Calendar className="h-4 w-4" />
-                            <span>August 2022 Today (2 years and 2 months)</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <MapPin className="h-4 w-4" />
-                            <span>Aachen</span>
-                          </div>
+                        <div className="flex items-center gap-1">
+                          <MapPin className="h-4 w-4" />
+                          <span>{exp.location}</span>
                         </div>
                       </div>
                     </div>
+
+                    <ul className="space-y-2">
+                      {exp.achievements.map((achievement, achIndex) => (
+                        <li key={achIndex} className="flex items-start text-muted-foreground">
+                          <span className="text-accent mr-2 font-bold">•</span>
+                          <span>{achievement}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
     </section>
   );
