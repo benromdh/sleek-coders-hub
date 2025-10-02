@@ -1,13 +1,12 @@
 import { Button } from '@/components/ui/button';
 import { MapPin, Mail, Linkedin, Github } from 'lucide-react';
-
 const Hero = () => {
-  return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-20 pb-12 px-4 sm:px-6 lg:px-8">
+  return <section id="home" className="min-h-screen flex items-center justify-center pt-20 pb-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto text-center space-y-8">
         {/* Profile Image Placeholder */}
         <div className="mx-auto w-32 h-32 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
-          <span className="text-4xl font-bold text-white">AB</span>
+          <span className="text-4xl font-bold text-white">ABR
+        </span>
         </div>
 
         {/* Name and Title */}
@@ -47,34 +46,22 @@ const Hero = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-wrap justify-center gap-4 pt-4">
-          <Button 
-            size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-          >
+          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground" onClick={() => document.getElementById('contact')?.scrollIntoView({
+          behavior: 'smooth'
+        })}>
             <Mail className="mr-2 h-5 w-5" />
             Get In Touch
           </Button>
-          <Button 
-            variant="outline" 
-            size="lg"
-            onClick={() => window.open('https://linkedin.com/in/ahmed-ben-romdhane-b70590185', '_blank')}
-          >
+          <Button variant="outline" size="lg" onClick={() => window.open('https://linkedin.com/in/ahmed-ben-romdhane-b70590185', '_blank')}>
             <Linkedin className="mr-2 h-5 w-5" />
             LinkedIn
           </Button>
-          <Button 
-            variant="outline" 
-            size="lg"
-            onClick={() => window.open('https://github.com/benromdh', '_blank')}
-          >
+          <Button variant="outline" size="lg" onClick={() => window.open('https://github.com/benromdh', '_blank')}>
             <Github className="mr-2 h-5 w-5" />
             GitHub
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
