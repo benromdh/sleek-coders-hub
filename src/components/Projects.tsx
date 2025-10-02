@@ -22,7 +22,7 @@ const Projects = () => {
     },
     {
       title: 'Cardiac Reprogramming Multi-Omics Analysis',
-      description: 'Machine learning pipeline for identifying regulatory factors in cell fate conversion. Analyzed hundreds of genes/proteins to identify potential key regulators.',
+      description: 'Investigated cardiac cell reprogramming mechanisms using animal models. Analyzed hundreds of differentially expressed genes/proteins from integrated transcriptomic and proteomic datasets to identify potential key regulators.',
       icon: FlaskConical,
       tags: ['R', 'Python', 'RNA-seq', 'Proteomics', 'Statistical Modeling'],
       status: 'Published Research',
