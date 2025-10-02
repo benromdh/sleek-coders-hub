@@ -6,7 +6,7 @@ const Projects = () => {
   const projects = [
     {
       title: 'AI-Powered Multiplexed Biosensor Platform',
-      description: 'Integrated platform combining biomarker discovery, cleanroom fabrication, and intelligent detection. Achieving 10+ target multiplexed detection with real-time AI-powered analysis.',
+      description: 'Integrating platform combining biomarker discovery, cleanroom fabrication, and intelligent detection that would enable 10+ target multiplexed detection with real-time AI-powered analysis.',
       icon: Cpu,
       tags: ['Python', 'PyTorch', 'Single-cell RNA-seq', 'Microfluidics', 'SPR Imaging'],
       status: 'Ongoing PhD Research',
