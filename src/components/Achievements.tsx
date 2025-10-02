@@ -16,10 +16,10 @@ const Achievements = () => {
       ]
     },
     {
-      icon: Medal,
-      title: 'Silver Medal - iGEM Synthetic Biology Competition',
+      icon: Trophy,
+      title: 'Gold Medal - iGEM Synthetic Biology Competition',
       period: '2018-2019',
-      color: 'from-gray-400 to-gray-500',
+      color: 'from-yellow-500 to-amber-600',
       details: [
         'Engineered novel biosensor for environmental monitoring',
         'Led computational modeling and data analysis of 200+ experimental data points',

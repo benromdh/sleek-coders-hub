@@ -66,7 +66,7 @@ const Hero = () => {
           <Button 
             variant="outline" 
             size="lg"
-            onClick={() => window.open('https://github.com/ahmed-ben-romdhane', '_blank')}
+            onClick={() => window.open('https://github.com/benromdh', '_blank')}
           >
             <Github className="mr-2 h-5 w-5" />
             GitHub
