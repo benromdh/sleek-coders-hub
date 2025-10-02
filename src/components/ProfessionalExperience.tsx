@@ -17,7 +17,7 @@ const ProfessionalExperience = () => {
       isPrimary: true
     },
     {
-      title: 'Master Thesis - Computational Biology',
+      title: 'Master Thesis - Computational Biology and Cell Reprogramming',
       organization: 'Harvard School of Engineering',
       location: 'Boston, MA',
       period: 'Nov 2021 - May 2022',
