@@ -24,7 +24,7 @@ const ProfessionalExperience = () => {
       achievements: [
         'Investigated cardiac cell reprogramming mechanisms using animal models',
         'Analyzed hundreds of differentially expressed genes/proteins from integrated transcriptomic and proteomic datasets',
-        'Identified 15 key regulatory factors and validated through in vitro and in vivo experiments',
+        'Identified potential key regulators and validated through in vitro experiment',
         'Skills demonstrated: Multi-omics analysis, machine learning, wet-lab validation, animal models'
       ],
       isPrimary: false
