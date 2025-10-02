@@ -17,7 +17,7 @@ const ProfessionalExperience = () => {
       isPrimary: true
     },
     {
-      title: 'Computational Biology Researcher',
+      title: 'Master Thesis - Computational Biology',
       organization: 'Harvard School of Engineering',
       location: 'Boston, MA',
       period: 'Nov 2021 - May 2022',
