@@ -61,7 +61,7 @@ const Contact = () => {
                   variant="outline"
                   size="lg"
                   className="h-auto py-4 flex-col space-y-2 hover:bg-accent/10 hover:border-accent transition-all"
-                  onClick={() => window.open('https://github.com/ahmed-ben-romdhane', '_blank')}
+                  onClick={() => window.open('https://github.com/benromdh', '_blank')}
                 >
                   <Github className="h-6 w-6 text-primary" />
                   <span className="font-semibold">GitHub</span>
