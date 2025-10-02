@@ -62,7 +62,12 @@ const Achievements = () => {
                   <div className="flex-1 space-y-3">
                     <div>
                       <h3 className="text-xl sm:text-2xl font-bold text-foreground">
-                        {achievement.title}
+                        <span className={`bg-gradient-to-r ${achievement.color} bg-clip-text text-transparent`}>
+                          {achievement.title.split(' - ')[0]}
+                        </span>
+                        {achievement.title.includes(' - ') && (
+                          <span className="text-foreground"> - {achievement.title.split(' - ')[1]}</span>
+                        )}
                       </h3>
                       <p className="text-sm text-muted-foreground">{achievement.period}</p>
                     </div>
