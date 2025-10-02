@@ -52,10 +52,6 @@ const Education = () => {
                       <span className="text-accent mr-2 font-bold">•</span>
                       <span><span className="font-semibold text-foreground">EPFL:</span> Life Sciences Engineering with Minor in Bioinformatics</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2 font-bold">•</span>
-                      <span><span className="font-semibold text-foreground">Harvard:</span> Master's Thesis in Bioengineering (Stem Cell Reprogramming)</span>
-                    </li>
                   </ul>
                 </div>
               </div>
