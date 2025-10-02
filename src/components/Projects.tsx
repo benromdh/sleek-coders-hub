@@ -73,9 +73,6 @@ const Projects = () => {
                     <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
-                    <Badge variant="secondary" className="mb-3 bg-secondary/50">
-                      {project.status}
-                    </Badge>
                   </div>
                 </div>
 
