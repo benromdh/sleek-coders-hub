@@ -25,7 +25,7 @@ const ProfessionalExperience = () => {
         'Investigated cardiac cell reprogramming mechanisms using animal models',
         'Analyzed hundreds of differentially expressed genes/proteins from integrated transcriptomic and proteomic datasets',
         'Identified potential key regulators and validated through in vitro experiment',
-        'Skills demonstrated: Multi-omics analysis, machine learning, wet-lab validation, animal models'
+        'Skills demonstrated: Multi-omics analysis, wet-lab validation, animal models'
       ],
       isPrimary: false
     },
