@@ -13,11 +13,11 @@ const Projects = () => {
       color: 'from-blue-500 to-cyan-500'
     },
     {
-      title: 'iGEM: Biosensor for Environmental Monitoring',
-      description: 'Engineered novel biosensor combining synthetic biology and machine learning. Nominated for Best Software and Best Therapeutics. Gold Medal winner among 300+ international teams.',
+      title: 'iGEM: Personalized Cancer Vaccine Platform',
+      description: 'Developed cost-effective cancer vaccine and point-of-care relapse surveillance system. Built manufacturing platform increasing vaccine production efficacy by 83%. Created software for identifying optimal protein candidates.',
       icon: FlaskConical,
-      tags: ['Synthetic Biology', 'Python', 'Machine Learning', 'Data Analysis', 'Software Development'],
-      status: 'Gold Medal + Nominations',
+      tags: ['Synthetic Biology', 'Python', 'Software Development', 'Vaccine Manufacturing', 'Bioinformatics'],
+      status: 'Gold + Best Therapeutics & Software Finalist',
       color: 'from-yellow-500 to-amber-600'
     },
     {
