@@ -30,7 +30,7 @@ const Projects = () => {
     },
     {
       title: 'Electrochemical Biosensor Simulation Framework',
-      description: 'Finite element modeling for rapid virtual prototyping of point-of-care devices. Reduced physical prototyping iterations by 60%.',
+      description: 'Finite element modeling for rapid virtual prototyping of point-of-care devices that significantly reduced physical prototyping iterations.',
       icon: LineChart,
       tags: ['Python', 'MATLAB', 'COMSOL', 'Electrochemistry'],
       status: 'Gold Medal at SensUs',
