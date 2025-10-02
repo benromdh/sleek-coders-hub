@@ -9,8 +9,8 @@ const Achievements = () => {
       period: '2019-2020',
       color: 'from-yellow-500 to-amber-600',
       details: [
-        'Led a 12-member team to develop electrochemical biosensor for epilepsy drug monitoring',
-        'Top-5 global ranking among 30+ international university teams',
+        'Led simulation and computational modeling for electrochemical biosensor for epilepsy drug monitoring',
+        'Top-5 global ranking among 15 international university teams',
         'Accelerated development cycles by 40% through computational modeling',
         'Developed business case projecting $2M+ market potential'
       ]
