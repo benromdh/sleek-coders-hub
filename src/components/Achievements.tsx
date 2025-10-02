@@ -17,13 +17,14 @@ const Achievements = () => {
     },
     {
       icon: Trophy,
-      title: 'Gold Medal - iGEM Synthetic Biology Competition',
+      title: 'Gold Medal + Best Software & Best Therapeutics Nominations - iGEM',
       period: '2018-2019',
       color: 'from-yellow-500 to-amber-600',
       details: [
-        'Engineered novel biosensor for environmental monitoring',
-        'Led computational modeling and data analysis of 200+ experimental data points',
-        'Competed against 300+ international teams'
+        'Engineered novel biosensor combining synthetic biology and machine learning for environmental monitoring',
+        'Nominated for Best Software and Best Therapeutics among 300+ international teams',
+        'Led computational modeling, data analysis, and software development',
+        'Developed predictive algorithms for biosensor optimization'
       ]
     },
     {

@@ -8,13 +8,21 @@ const Projects = () => {
       title: 'AI-Powered Multiplexed Biosensor Platform',
       description: 'Integrated platform combining biomarker discovery, cleanroom fabrication, and intelligent detection. Achieving 10+ target multiplexed detection with real-time AI-powered analysis.',
       icon: Cpu,
-      tags: ['Python', 'PyTorch', 'SAM2', 'Single-cell RNA-seq', 'Microfluidics', 'SPR Imaging'],
+      tags: ['Python', 'PyTorch', 'Single-cell RNA-seq', 'Microfluidics', 'SPR Imaging'],
       status: 'Ongoing PhD Research',
       color: 'from-blue-500 to-cyan-500'
     },
     {
+      title: 'iGEM: Biosensor for Environmental Monitoring',
+      description: 'Engineered novel biosensor combining synthetic biology and machine learning. Nominated for Best Software and Best Therapeutics. Gold Medal winner among 300+ international teams.',
+      icon: FlaskConical,
+      tags: ['Synthetic Biology', 'Python', 'Machine Learning', 'Data Analysis', 'Software Development'],
+      status: 'Gold Medal + Nominations',
+      color: 'from-yellow-500 to-amber-600'
+    },
+    {
       title: 'Cardiac Reprogramming Multi-Omics Analysis',
-      description: 'Machine learning pipeline for identifying regulatory factors in cell fate conversion. Analyzed 400+ genes/proteins to identify 15 key regulatory factors.',
+      description: 'Machine learning pipeline for identifying regulatory factors in cell fate conversion. Analyzed hundreds of genes/proteins to identify potential key regulators.',
       icon: FlaskConical,
       tags: ['R', 'Python', 'RNA-seq', 'Proteomics', 'Statistical Modeling'],
       status: 'Published Research',
