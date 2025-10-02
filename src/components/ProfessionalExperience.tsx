@@ -23,7 +23,7 @@ const ProfessionalExperience = () => {
       period: 'Nov 2021 - May 2022',
       achievements: [
         'Investigated cardiac cell reprogramming mechanisms using animal models',
-        'Analyzed 400+ differentially expressed genes/proteins from integrated transcriptomic and proteomic datasets',
+        'Analyzed hundreds of differentially expressed genes/proteins from integrated transcriptomic and proteomic datasets',
         'Identified 15 key regulatory factors and validated through in vitro and in vivo experiments',
         'Skills demonstrated: Multi-omics analysis, machine learning, wet-lab validation, animal models'
       ],
