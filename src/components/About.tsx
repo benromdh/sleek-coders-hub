@@ -46,7 +46,7 @@ const About = () => {
               My training includes research experiences at three world-leading institutions: 
               <span className="font-semibold text-foreground"> RWTH Aachen University</span> (current PhD), 
               <span className="font-semibold text-foreground"> Harvard School of Engineering</span> (master's thesis on stem cell reprogramming), 
-              and <span className="font-semibold text-foreground"> EPFL</span> (master's degree with bioinformatics specialization).
+              and <span className="font-semibold text-foreground"> EPFL</span> (master's degree with bioinformatics and machine learning specialization).
             </p>
           </CardContent>
         </Card>
