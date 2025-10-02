@@ -50,7 +50,7 @@ const Education = () => {
                   <ul className="space-y-2 text-muted-foreground">
                     <li className="flex items-start">
                       <span className="text-accent mr-2 font-bold">•</span>
-                      <span><span className="font-semibold text-foreground">EPFL:</span> Life Sciences Engineering with Minor in Bioinformatics</span>
+                      <span><span className="font-semibold text-foreground">EPFL:</span> Life Sciences Engineering with Minor in Bioinformatics and ML</span>
                     </li>
                   </ul>
                 </div>
