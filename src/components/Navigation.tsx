@@ -46,7 +46,7 @@ const Navigation = () => {
             onClick={() => scrollToSection('home')}
             className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
           >
-            AB
+            ABR
           </button>
 
           {/* Desktop Navigation */}
