@@ -11,7 +11,7 @@ const ProfessionalExperience = () => {
       achievements: [
         'Engineering end-to-end AI biosensing platform with cleanroom-fabricated micro/nanostructured sensor arrays',
         'Developing machine learning pipelines for miRNA biomarker identification from single-cell RNA sequencing data',
-        'Implementing foundation models (SAM2) for automated real-time biosensor image analysis',
+        'Implementing foundation models for automated real-time biosensor image analysis',
         'Impact: Achieving 10+ target multiplexed detection (vs 1-3 conventional), reducing analysis time from hours to seconds'
       ],
       isPrimary: true
