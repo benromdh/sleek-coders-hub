@@ -17,14 +17,15 @@ const Achievements = () => {
     },
     {
       icon: Trophy,
-      title: 'Gold Medal + Best Software & Best Therapeutics Nominations - iGEM',
-      period: '2018-2019',
+      title: 'Gold Medal + Best Therapeutics & Best Software Finalist - iGEM',
+      period: '2018',
       color: 'from-yellow-500 to-amber-600',
       details: [
-        'Engineered novel biosensor combining synthetic biology and machine learning for environmental monitoring',
-        'Nominated for Best Software and Best Therapeutics among 300+ international teams',
-        'Led computational modeling, data analysis, and software development',
-        'Developed predictive algorithms for biosensor optimization'
+        'Represented EPFL at International Genetically Engineered Machine (iGEM) competition among 300+ university teams',
+        'Developed personalized, cost-effective cancer vaccine and point-of-care relapse surveillance system',
+        'Built software for identifying optimal protein candidates for vaccine development',
+        'Created manufacturing platform increasing vaccine production efficacy by 83% vs current methods',
+        'Finalist for Best Therapeutics Project and Best Software Tool'
       ]
     },
     {
