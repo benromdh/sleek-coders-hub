@@ -1,109 +1,73 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Cpu, FlaskConical, LineChart, Globe } from "lucide-react";
+import { Badge } from '@/components/ui/badge';
 
 const Projects = () => {
   const projects = [
     {
       title: 'AI-Powered Multiplexed Biosensor Platform',
-      description: 'Integrating platform combining biomarker discovery, cleanroom fabrication, and intelligent detection that would enable 10+ target multiplexed detection with real-time AI-powered analysis.',
-      icon: Cpu,
-      tags: ['Python', 'PyTorch', 'Single-cell RNA-seq', 'Microfluidics', 'SPR Imaging'],
+      what: 'End-to-end system combining ML biomarker discovery, cleanroom-fabricated sensors, and real-time computer vision analysis.',
+      impact: '10+ simultaneous targets (vs 1–3 conventional), analysis in seconds instead of hours',
+      tags: ['PyTorch', 'Transformers', 'Computer Vision', 'Single-cell RNA-seq'],
       status: 'Ongoing PhD Research',
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      title: 'iGEM: Personalized Cancer Vaccine Platform',
-      description: 'Developed cost-effective cancer vaccine and point-of-care relapse surveillance system. Built manufacturing platform increasing vaccine production efficacy by 83%. Created software for identifying optimal protein candidates.',
-      icon: FlaskConical,
-      tags: ['Synthetic Biology', 'Python', 'Software Development', 'Vaccine Manufacturing', 'Bioinformatics'],
-      status: 'Gold + Best Therapeutics & Software Finalist',
-      color: 'from-yellow-500 to-amber-600'
     },
     {
       title: 'Cardiac Reprogramming Multi-Omics Analysis',
-      description: 'Investigated cardiac cell reprogramming mechanisms using animal models. Analyzed hundreds of differentially expressed genes/proteins from integrated transcriptomic and proteomic datasets to identify potential key regulators.',
-      icon: FlaskConical,
+      what: 'Integrated transcriptomic and proteomic data to identify key regulators of heart cell reprogramming.',
+      impact: 'Ranked target shortlist directly guided lab experiments, cutting validation cycles',
       tags: ['R', 'Python', 'RNA-seq', 'Proteomics', 'Statistical Modeling'],
       status: 'Published Research',
-      color: 'from-green-500 to-emerald-500'
     },
     {
-      title: 'Electrochemical Biosensor Simulation Framework',
-      description: 'Finite element modeling for rapid virtual prototyping of point-of-care devices that significantly reduced physical prototyping iterations.',
-      icon: LineChart,
-      tags: ['Python', 'MATLAB', 'COMSOL', 'Electrochemistry'],
+      title: 'Personalized Cancer Vaccine Platform (iGEM)',
+      what: 'Software ranking vaccine targets from patient genomic data, plus a manufacturing pipeline.',
+      impact: '83% improvement in manufacturing yield metric',
+      tags: ['Python', 'Bioinformatics', 'Software Development'],
+      status: 'Gold Medal + Finalist',
+    },
+    {
+      title: 'Electrochemical Biosensor Simulation',
+      what: 'Finite element models for rapid virtual prototyping of point-of-care diagnostic devices.',
+      impact: '60% fewer physical prototyping iterations, predicted 5× faster detection',
+      tags: ['Python', 'MATLAB', 'COMSOL', 'Simulation'],
       status: 'Gold Medal at SensUs',
-      color: 'from-orange-500 to-red-500'
     },
     {
-      title: 'CNN for Geospatial Road Segmentation',
-      description: 'Deep learning model for automated infrastructure mapping from satellite imagery. Achieved 94% F1-score, ranking top 3 among 80+ teams.',
-      icon: Globe,
-      tags: ['PyTorch', 'Computer Vision', 'CNNs', 'Semantic Segmentation'],
-      status: 'Competition Award',
-      color: 'from-purple-500 to-pink-500'
-    }
+      title: 'CNN for Satellite Road Segmentation',
+      what: 'Deep learning model for automated infrastructure mapping from satellite imagery.',
+      impact: '94% F1-score, top 3 among 80+ teams',
+      tags: ['PyTorch', 'CNNs', 'Semantic Segmentation'],
+      status: '3rd Place Competition',
+    },
   ];
 
   return (
-    <section id="projects" className="py-20 bg-background">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Key Projects
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Innovative research projects bridging AI, biosensing, and computational biology
-          </p>
-        </div>
+    <section id="projects" className="py-20 bg-card">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
+          Key Projects
+        </h2>
+        <p className="text-muted-foreground mb-12">Selected work with measurable outcomes</p>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {projects.map((project, index) => (
-            <Card
-              key={index}
-              className="bg-card border-border shadow-lg hover:shadow-xl transition-all duration-300 group"
-            >
-              <CardContent className="p-6 space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className={`flex-shrink-0 p-3 rounded-lg bg-gradient-to-br ${project.color}`}>
-                    <project.icon className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h3>
-                  </div>
-                </div>
-
-                <p className="text-muted-foreground leading-relaxed">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {project.tags.map((tag, tagIndex) => (
-                    <Badge
-                      key={tagIndex}
-                      variant="outline"
-                      className="border-border text-foreground"
-                    >
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+        <div className="space-y-6">
+          {projects.map((p, i) => (
+            <div key={i} className="border border-border rounded-xl p-6 bg-background hover:border-primary/30 transition-colors">
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                <h3 className="font-bold text-foreground">{p.title}</h3>
+                <span className="text-xs font-mono text-primary bg-primary/5 border border-primary/20 px-2 py-0.5 rounded-full">{p.status}</span>
+              </div>
+              <p className="text-sm text-muted-foreground mb-3">{p.what}</p>
+              <div className="bg-accent/5 border border-accent/20 rounded-lg px-3 py-2 mb-4 text-sm">
+                <span className="font-semibold text-accent">Impact:</span>{' '}
+                <span className="text-foreground">{p.impact}</span>
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {p.tags.map((tag, j) => (
+                  <Badge key={j} variant="secondary" className="text-xs font-mono bg-secondary text-secondary-foreground">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            </div>
           ))}
-        </div>
-
-        <div className="mt-8 text-center">
-          <Card className="bg-card border-border shadow-lg">
-            <CardContent className="p-6">
-              <p className="text-lg text-muted-foreground">
-                <span className="font-semibold text-foreground">Publications:</span> Multiple research publications in preparation
-              </p>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </section>

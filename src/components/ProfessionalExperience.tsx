@@ -1,112 +1,120 @@
-import { Card, CardContent } from '@/components/ui/card';
-import { Building2, Calendar, MapPin } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 
 const ProfessionalExperience = () => {
   const experiences = [
     {
-      title: 'Doctoral Researcher - AI & Biosensing',
-      organization: 'RWTH Aachen University',
+      role: 'ML Research Engineer',
+      focus: 'Data Pipelines & Computer Vision Deployment',
+      org: 'RWTH Aachen University',
       location: 'Aachen, Germany',
-      period: 'Aug 2023 - Present',
-      achievements: [
-        'Engineering end-to-end AI biosensing platform with cleanroom-fabricated micro/nanostructured sensor arrays',
-        'Developing machine learning pipelines for miRNA biomarker identification from single-cell RNA sequencing data',
-        'Implementing foundation models for automated real-time biosensor image analysis',
-        'Impact: Achieving 10+ target multiplexed detection (vs 1-3 conventional), reducing analysis time from hours to seconds'
+      period: 'Aug 2023 – Present',
+      highlights: [
+        'Built end-to-end ML pipelines on single-cell sequencing data (10,000+ cells/run) — automated QC, normalization, feature selection, and statistical analysis',
+        'Deployed transformer-based computer vision models onto biosensor hardware, pushing detection from 1–3 to 10+ simultaneous targets',
+        'Cut analysis time from hours to seconds with real-time AI-powered image processing',
       ],
-      isPrimary: true
+      tags: ['PyTorch', 'Transformers', 'Computer Vision', 'Python', 'Docker'],
+      metric: '10× more targets detected',
+      current: true,
     },
     {
-      title: 'Master Thesis - Computational Biology and Cell Reprogramming',
-      organization: 'Harvard School of Engineering',
+      role: 'Data Scientist',
+      focus: 'Multi-Omics Integration & Predictive Modeling',
+      org: 'Harvard School of Engineering',
       location: 'Boston, MA',
-      period: 'Nov 2021 - May 2022',
-      achievements: [
-        'Investigated cardiac cell reprogramming mechanisms using animal models',
-        'Analyzed hundreds of differentially expressed genes/proteins from integrated transcriptomic and proteomic datasets',
-        'Identified potential key regulators and validated through in vitro experiment',
-        'Skills demonstrated: Multi-omics analysis, wet-lab validation, animal models'
+      period: 'Nov 2021 – May 2022',
+      highlights: [
+        'Integrated transcriptomics and proteomics datasets (hundreds of features, multiple conditions) to identify regulatory drivers',
+        'Produced a ranked target shortlist that directly determined which experiments the biology team ran next, cutting the validation cycle',
       ],
-      isPrimary: false
+      tags: ['R', 'Python', 'Statistical Modeling', 'Multi-Omics'],
+      metric: 'Directly guided lab experiments',
+      current: false,
     },
     {
-      title: 'Biosensor Development Researcher',
-      organization: 'EPFL, Integrated Systems Laboratory',
+      role: 'R&D Data Scientist',
+      focus: 'Analytical Method Development',
+      org: 'Nestlé Research Center',
       location: 'Lausanne, Switzerland',
-      period: 'Dec 2019 - Aug 2020',
-      achievements: [
-        'Built numerical simulation framework for point-of-care electrochemical biosensor design',
-        'Developed predictive models optimizing sensor sensitivity and detection speed',
-        'Impact: Reduced physical prototyping iterations by 60%, predicted 5x faster detection times'
+      period: 'Mar 2021 – Aug 2021',
+      highlights: [
+        'Designed and validated precision measurement methods (LC-MS/MS) with full statistical QC from scratch',
+        'Results fed directly into reformulation decisions for a $500M+ product line',
       ],
-      isPrimary: false
+      tags: ['LC-MS/MS', 'Statistical QC', 'Method Validation'],
+      metric: '$500M+ product line impact',
+      current: false,
     },
     {
-      title: 'R&D Scientist',
-      organization: 'Nestlé Research',
+      role: 'ML Engineer',
+      focus: 'Simulation & Predictive Modeling',
+      org: 'EPFL, Integrated Systems Laboratory',
       location: 'Lausanne, Switzerland',
-      period: 'Mar 2021 - Aug 2021',
-      achievements: [
-        'Developed optimized LC-MS/MS methods for infant formula quality control',
-        'Impact: 30% faster analysis time, 2x improved detection limits, informed strategy for $500M+ product line'
+      period: 'Dec 2019 – Aug 2020',
+      highlights: [
+        'Built Python/MATLAB simulation models predicting sensor hardware behavior before fabrication',
+        'Accuracy cut prototype iterations by 60% and directly informed component selection',
       ],
-      isPrimary: false
-    }
+      tags: ['Python', 'MATLAB', 'Simulation', 'Predictive Modeling'],
+      metric: '60% fewer prototypes needed',
+      current: false,
+    },
   ];
 
   return (
-    <section id="experience" className="py-20 bg-muted/20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Research Experience
-          </h2>
-        </div>
+    <section id="experience" className="py-20 bg-background">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
+          Experience
+        </h2>
+        <p className="text-muted-foreground mb-12">Where I've applied ML to solve real problems</p>
 
-        <div className="space-y-8">
+        <div className="space-y-0">
           {experiences.map((exp, index) => (
-            <Card key={index} className="bg-card border-border shadow-lg">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 pt-1">
-                    <div className={`p-3 rounded-lg ${exp.isPrimary ? 'bg-gradient-to-br from-primary to-accent' : 'bg-muted'}`}>
-                      <Building2 className={`h-6 w-6 ${exp.isPrimary ? 'text-white' : 'text-muted-foreground'}`} />
-                    </div>
-                  </div>
-                  
-                  <div className="flex-1 space-y-3">
-                    <div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-1">
-                        {exp.title}
-                      </h3>
-                      <p className="text-lg font-semibold text-primary mb-2">
-                        {exp.organization}
-                      </p>
-                      
-                      <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-                        <div className="flex items-center gap-1">
-                          <Calendar className="h-4 w-4" />
-                          <span>{exp.period}</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <MapPin className="h-4 w-4" />
-                          <span>{exp.location}</span>
-                        </div>
-                      </div>
-                    </div>
+            <div key={index} className="relative pl-8 pb-12 last:pb-0 border-l-2 border-border last:border-transparent">
+              {/* Timeline dot */}
+              <div className={`absolute -left-[9px] top-1 w-4 h-4 rounded-full border-2 ${
+                exp.current 
+                  ? 'bg-primary border-primary shadow-[0_0_8px_hsl(var(--primary)/0.5)]' 
+                  : 'bg-background border-muted-foreground/30'
+              }`} />
 
-                    <ul className="space-y-2">
-                      {exp.achievements.map((achievement, achIndex) => (
-                        <li key={achIndex} className="flex items-start text-muted-foreground">
-                          <span className="text-accent mr-2 font-bold">•</span>
-                          <span>{achievement}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+              <div className="space-y-3">
+                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                  <h3 className="text-xl font-bold text-foreground">{exp.role}</h3>
+                  {exp.current && (
+                    <span className="text-xs font-mono font-semibold text-accent bg-accent/10 px-2 py-0.5 rounded-full">CURRENT</span>
+                  )}
                 </div>
-              </CardContent>
-            </Card>
+                <p className="text-sm text-primary font-medium">{exp.focus}</p>
+                <p className="text-sm text-muted-foreground">
+                  {exp.org} · {exp.location} · {exp.period}
+                </p>
+
+                {/* Impact metric callout */}
+                <div className="inline-flex items-center gap-2 bg-primary/5 border border-primary/20 rounded-lg px-3 py-1.5 text-sm font-medium text-primary">
+                  <span className="w-1.5 h-1.5 bg-primary rounded-full" />
+                  {exp.metric}
+                </div>
+
+                <ul className="space-y-2 text-muted-foreground">
+                  {exp.highlights.map((h, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm">
+                      <span className="text-primary mt-1 shrink-0">▸</span>
+                      <span>{h}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  {exp.tags.map((tag, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs font-mono bg-secondary text-secondary-foreground">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </div>
