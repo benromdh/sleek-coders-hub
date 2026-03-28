@@ -1,138 +1,46 @@
-import { Card, CardContent } from '@/components/ui/card';
-import { GraduationCap, Award } from 'lucide-react';
+import { GraduationCap } from 'lucide-react';
 
 const Education = () => {
+  const education = [
+    {
+      degree: 'PhD — Machine Learning for Medical Diagnostics',
+      school: 'RWTH Aachen University',
+      location: 'Aachen, Germany',
+      period: 'Aug 2023 – Present',
+      current: true,
+    },
+    {
+      degree: 'M.Sc. — Biomedical Engineering & Bioinformatics',
+      subtitle: 'Minor in Data Science & AI',
+      school: 'EPFL & Harvard School of Engineering',
+      location: 'Lausanne, CH & Boston, MA',
+      period: 'Sep 2019 – Oct 2022',
+      current: false,
+    },
+  ];
+
   return (
-    <section id="education" className="py-20 bg-muted/20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Education
-          </h2>
-        </div>
+    <section id="education" className="py-20 bg-background">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
+          Education
+        </h2>
+        <p className="text-muted-foreground mb-12">Academic background</p>
 
-        <div className="space-y-8">
-          {/* PhD */}
-          <Card className="bg-card border-border shadow-lg">
-            <CardContent className="p-6">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 p-3 rounded-lg bg-gradient-to-br from-primary to-accent">
-                  <GraduationCap className="h-6 w-6 text-white" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
-                    PhD in Biomedical Engineering
-                  </h3>
-                  <p className="text-lg font-semibold text-primary mb-2">RWTH Aachen University</p>
-                  <p className="text-muted-foreground mb-2">Oct 2022 - Present</p>
-                  <p className="text-muted-foreground">Focus: AI-Driven Biosensing & Diagnostics</p>
-                </div>
+        <div className="space-y-6">
+          {education.map((ed, i) => (
+            <div key={i} className="flex gap-4 p-6 bg-card border border-border rounded-xl">
+              <div className="shrink-0 mt-1">
+                <GraduationCap className={`h-5 w-5 ${ed.current ? 'text-primary' : 'text-muted-foreground'}`} />
               </div>
-            </CardContent>
-          </Card>
-
-          {/* Dual Master's */}
-          <Card className="bg-card border-border shadow-lg">
-            <CardContent className="p-6">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 p-3 rounded-lg bg-gradient-to-br from-primary to-accent">
-                  <GraduationCap className="h-6 w-6 text-white" />
-                </div>
-                <div className="flex-1 space-y-3">
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
-                      Dual Master of Science
-                    </h3>
-                    <p className="text-lg font-semibold text-primary mb-2">EPFL & Harvard SEAS</p>
-                    <p className="text-muted-foreground mb-2">Sep 2019 - Sep 2022</p>
-                    <p className="text-muted-foreground">GPA: 5.2/6.0</p>
-                  </div>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2 font-bold">•</span>
-                      <span><span className="font-semibold text-foreground">EPFL:</span> Life Sciences Engineering with Minor in Bioinformatics and ML</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2 font-bold">•</span>
-                      <span><span className="font-semibold text-foreground">Harvard:</span> Master Thesis in Bioengineering and Computational Biology</span>
-                    </li>
-                  </ul>
-                </div>
+              <div>
+                <h3 className="font-bold text-foreground">{ed.degree}</h3>
+                {ed.subtitle && <p className="text-sm text-primary font-medium">{ed.subtitle}</p>}
+                <p className="text-sm text-muted-foreground mt-1">{ed.school} · {ed.location}</p>
+                <p className="text-xs text-muted-foreground font-mono mt-1">{ed.period}</p>
               </div>
-            </CardContent>
-          </Card>
-
-          {/* Bachelor's */}
-          <Card className="bg-card border-border shadow-lg">
-            <CardContent className="p-6">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 p-3 rounded-lg bg-muted">
-                  <GraduationCap className="h-6 w-6 text-muted-foreground" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
-                    Bachelor's Degree
-                  </h3>
-                  <p className="text-lg font-semibold text-primary mb-2">EPFL</p>
-                  <p className="text-muted-foreground">2015 - 2019</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Certifications */}
-        <div className="mt-12">
-          <h3 className="text-3xl font-bold text-foreground mb-6 text-center">Certifications</h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card className="bg-card border-border shadow-lg">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-3">
-                  <Award className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="font-semibold text-foreground">Generative AI with Large Language Models</p>
-                    <p className="text-sm text-muted-foreground">DeepLearning.AI & AWS - Nov 2024</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-card border-border shadow-lg">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-3">
-                  <Award className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="font-semibold text-foreground">Deep Learning: Getting Started</p>
-                    <p className="text-sm text-muted-foreground">LinkedIn Learning - Jan 2023</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card border-border shadow-lg">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-3">
-                  <Award className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="font-semibold text-foreground">BLS-AED Certification</p>
-                    <p className="text-sm text-muted-foreground">Emergency Medical Services</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card border-border shadow-lg">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-3">
-                  <Award className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="font-semibold text-foreground">IAS Level 1 First Aid</p>
-                    <p className="text-sm text-muted-foreground">International Aid Services</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
