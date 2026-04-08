@@ -41,9 +41,9 @@ const About = () => {
             Bridging the Gap
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed mb-16">
-            Most people specialize in software <em>or</em> hardware <em>or</em> science. 
-            I work across all three — building ML systems that run on custom-fabricated hardware, 
-            trained on data I helped generate in the lab. That's what makes the work I do different.
+            I work at the interface of software, physical sciences, and data — designing ML pipelines, 
+            developing biosensors in the cleanroom, and turning complex datasets into actionable insight. 
+            It's rare to find someone fluent across all three. That's what sets me apart.
           </p>
 
           {/* Three domain cards with visuals */}
